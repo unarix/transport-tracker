@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Transport Tracker</string>
-    <string name="title_activity_main">Transport Tracker</string>
+    <string name="app_name">EA Tracker</string>
+    <string name="title_activity_main">EA Tracker</string>
     <string name="start_tracking">Start Tracking</string>
     <string name="stop_tracking">Stop Tracking</string>
-    <string name="enter_transport_id">Enter transport ID</string>
-    <string name="enter_email">Enter email</string>
-    <string name="enter_password">Enter password</string>
+    <string name="enter_transport_id">Transport ID</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_password">Password</string>
     <string
         name="location_permissions_required">Location permissions are required for tracking
         location. Please grant these permissions to continue.</string>
