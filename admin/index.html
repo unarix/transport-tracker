@@ -10,16 +10,14 @@
 <style>
 .day {margin: 50px;}
 #loading {width: 100%; height: 5px;}
-h2, h3 {text-transform: uppercase;}
-h2 {margin-left: 20px;}
-h3 {margin-left: -10px !important; width: 160px; height: 70px; font-size: 20px !important;}
+h3 {font-size: 20px !important;}
 .trips {height: 300px; overflow: scroll;}
-.mdl-card {float: left; width: auto; background: #F5F5F5; margin: 20px; padding: 20px;}
+.mdl-card {border-radius: 10px; float: left; width: auto; background: #F5F5F5; margin: 10px; padding: 10px;}
 nav {height: auto !important; width: 100% !important;}
 .is-active {border-bottom: 3px solid #fff;}
 label {margin-right: 3px; font-weight: bold;}
 #transports ul {padding: 0; list-style-type: none;}
-#transports label {width: 70px; display: inline-block;}
+#transports label { display: inline-block;}
 .mdl-card__title {display: block;}
 header {display: flex !important;}
 .empty {margin: 50px;}
@@ -29,6 +27,8 @@ header {display: flex !important;}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.3/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/es.js"></script>
+
 <script src="./node_modules/ejs/ejs.min.js"></script>
 <script src="main.js"></script>
 
@@ -38,7 +38,15 @@ header {display: flex !important;}
 
 <header class="mdl-layout__header">
   <div class="mdl-layout__header-row">
-    <span class="mdl-layout-title">Transport Tracker</span>
+    <img style="
+    width: 60px;
+    background-color: #fff;
+    margin-right: 10px; 
+    border-radius: 50px;
+    border: none;
+    " src="https://www.edicionesazul.com.ar/images/grupo_4.png" >
+    </img>
+    <span class="mdl-layout-title"> Azul Tracker</span>
   </div>
 </header>
 
@@ -51,17 +59,22 @@ header {display: flex !important;}
 
 <script id="transports-template" type="x-ejs">
 <% transports.forEach(function(transport) { %>
-<div class="mdl-card" style="background:rgb(250, <%= Math.round(transport.power * 2.5 ) %>, <%= Math.round(transport.power * 2.5 ) %>)">
-  <div class="mdl-card__title">
-    <h3 class="mdl-card__title-text"><%= transport.id %></h3>
+<div class="mdl-card" style="background:rgb(250, <%= Math.round(transport.power * 3.5 ) %>, <%= Math.round(transport.power * 3.5 ) %>)">
+  <div>
+    <h3>Patente: <br><%= transport.id %></h3>
   </div>
   <div class="mdl-card__actions">
-  <img src="<%= transport.map %>">
-  <ul>
-    <!--<li><label>Location:</label><%= transport.lat %>,<%= transport.lng %></li>-->
-    <li><label>Power:</label><%= transport.power %>%</li>
-    <li><label>Updated:</label><%= transport.time %></li>
-  </ul>
+    <img src="<%= transport.map %>">
+    <ul>
+      <li>
+        <label>Ubicación:</label><%= transport.lat %>,<%= transport.lng %>
+        <a target="_blank" rel="noopener noreferrer" href="http://www.google.com/maps/place/<%= transport.lat %>,<%= transport.lng %>"> 
+          <img style="width:20px;" src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/maps-icon.png"></img> 
+        </a>
+      </li>
+      <li><label>Bateria:</label><%= transport.power %>%</li>
+      <li><label>Actualización:</label><%= transport.time %></li>
+    </ul>
   </div>
 </div>
 <% }) %>

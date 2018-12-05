@@ -16,9 +16,9 @@
  */
 
 var config = {
-  "mapsApiKey": "AIzaSyD7dN2oOgEt5uFivujJr3qG41ajURyjFwk",
-  "firebaseApiKey": "AIzaSyDityEbqSTpZUeG8ZQwTLQWC8o9si8BLtU",
-  "firebaseDatabaseURL": "https://azul-edition.firebaseio.com",
+  "mapsApiKey": "AIzaSyDityEbqSTpZUeG8ZQwTLQWC8o9si8xBLtU",
+  "firebaseApiKey": "AIzaSyDityEbqSTpZUeG8ZQwTLQWC8o9si8xBLtU",
+  "firebaseDatabaseURL": "https://azul-editions.firebaseio.com",
 };
 
 var app = firebase.initializeApp({
@@ -37,6 +37,7 @@ database.ref('raw-locations').on('value', function(data) {
     var transport = transports[id][0];
     transport.id = id;
     transport.power = Math.round(transport.power);
+    moment.locale('es');
     transport.time = moment(transport.time).fromNow();
     transport.map = 'https://maps.googleapis.com/maps/api/staticmap?size=200x200'
         + '&markers=color:blue%7Clabel:' + transport.id + '%7C' + transport.lat
@@ -46,7 +47,7 @@ database.ref('raw-locations').on('value', function(data) {
 
   var html;
   if (!transports) {
-    html = '<p class="empty">No transport locations available.</p>';
+    html = '<p class="empty">Sin vehiculos para localizar.</p>';
   } else {
     html = ejs.render($('#transports-template').html(), {transports: transports});
   }
