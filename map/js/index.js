@@ -20,7 +20,12 @@
 /* globals google firebase */
 
 // TODO: See https://firebase.google.com/docs/web/setup for how to configure access to Firebase
-const firebaseConfig = {};
+const firebaseConfig = {apiKey: "AIzaSyDityEbqSTpZUeG8ZQwTLQWC8o9si8BLtU",
+    authDomain: "azul-edition.firebaseapp.com",
+    databaseURL: "https://azul-edition.firebaseio.com",
+    projectId: "azul-edition",
+    storageBucket: "azul-edition.appspot.com",
+    messagingSenderId: "318005230234"};
 
 const mapStyle = [
   {

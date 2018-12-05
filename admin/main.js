@@ -16,9 +16,9 @@
  */
 
 var config = {
-  "mapsApiKey": "",
-  "firebaseApiKey": "",
-  "firebaseDatabaseURL": "",
+  "mapsApiKey": "AIzaSyD7dN2oOgEt5uFivujJr3qG41ajURyjFwk",
+  "firebaseApiKey": "AIzaSyDityEbqSTpZUeG8ZQwTLQWC8o9si8BLtU",
+  "firebaseDatabaseURL": "https://azul-edition.firebaseio.com",
 };
 
 var app = firebase.initializeApp({
