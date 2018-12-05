@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.google.transporttracker"
@@ -28,17 +28,17 @@ ext {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile "com.android.support:appcompat-v7:$support"
-    compile "com.android.support:cardview-v7:$support"
-    compile "com.android.support:design:$support"
-    compile "com.google.android.gms:play-services-gcm:$playServices"
-    compile "com.google.android.gms:play-services-location:$playServices"
-    compile "com.google.firebase:firebase-auth:$playServices"
-    compile "com.google.firebase:firebase-config:$playServices"
-    compile "com.google.firebase:firebase-crash:$playServices"
-    compile "com.google.firebase:firebase-database:$playServices"
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    api "com.android.support:appcompat-v7:$support"
+    api "com.android.support:cardview-v7:$support"
+    api "com.android.support:design:$support"
+    api "com.google.android.gms:play-services-gcm:$playServices"
+    api "com.google.android.gms:play-services-location:$playServices"
+    api "com.google.firebase:firebase-auth:$playServices"
+    api "com.google.firebase:firebase-config:$playServices"
+    api "com.google.firebase:firebase-crash:$playServices"
+    api "com.google.firebase:firebase-database:$playServices"
 }
 
 apply plugin: 'com.google.gms.google-services'
